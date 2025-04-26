@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id]) # IDに基づいてオブジェクトを取得
-    unless user_signed_in?
+    unless user_signed_in? && @prototype.user == current_user
       redirect_to action: :index
     end
   end
