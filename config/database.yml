@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: protospace-41862_development
+  database: protospace_41862_development
 
 test:
   <<: *default
@@ -16,9 +16,15 @@ test:
   username: root
   password:
   host: localhost
-  database: protospace-41862_test
+  database: protospace_41862_test
 
 production:
   <<: *default
   adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
+
+#production:
+ # <<: *default
+  #database: protospace_41862_production
+  #username: protospace_41862
+  #password: <%= ENV["PROTOSPACE_41862_DATABASE_PASSWORD"] %>
